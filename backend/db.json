@@ -9,7 +9,30 @@
       "show_dependent": 1
     }
   ],
-  "registrations": [ ],
+  "registrations": [
+    {
+      "id": 1,
+      "company_id": 12,
+      "mail": "kapilpateldev85@gmail.com",
+      "fname": "kapil",
+      "lname": "patel",
+      "otp": "377391",
+      "token": "MTc3OTk1MTg5MzA0OS0wLjQwMDQ5NzYzNDY4MDkzOTQ2",
+      "verified": false,
+      "created_at": "2026-05-28T07:04:53.050Z"
+    },
+    {
+      "id": 2,
+      "company_id": 12,
+      "mail": "prabal19999@gmail.com",
+      "fname": "John",
+      "lname": "Doe",
+      "otp": "551292",
+      "token": "MTc3OTk1MjQxMTc5NS0wLjU5ODUwNjI0ODgyOTczNQ==",
+      "verified": false,
+      "created_at": "2026-05-28T07:13:31.795Z"
+    }
+  ],
   "wellbeingPillars": [
     {
       "id": 1,
