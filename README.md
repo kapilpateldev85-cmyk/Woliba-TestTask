@@ -23,7 +23,7 @@ npm install
 2. Start the local backend API:
 
 ```bash
-npm run server
+node server.js
 ```
 
 The backend runs on:
@@ -44,14 +44,9 @@ The frontend runs on:
 http://localhost:3000
 ```
 
-4. Use the seeded company credentials:
-
-```text
-Company: Woliba
-Password: Woliba@123!
 ```
 
-5. Optional environment configuration:
+4. Optional environment configuration:
 
 Frontend API settings can be configured in `frontend/.env`:
 
@@ -60,23 +55,7 @@ REACT_APP_API_BASE_URL=http://localhost:5000/v1
 REACT_APP_JSON_SERVER_BASE_URL=http://localhost:5010
 ```
 
-Backend OTP email settings can be configured in `frontend/backend/.env`:
 
-```env
-PORT=5000
-USE_STATIC_OTP=true
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
-SMTP_FROM=
-```
-
-If SMTP values are not provided, the backend logs the OTP in the terminal. When `USE_STATIC_OTP=true`, the mock OTP is:
-
-```text
-123456
-```
 
 ## Libraries/Tools Used
 
