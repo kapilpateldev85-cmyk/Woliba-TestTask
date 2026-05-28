@@ -117,7 +117,11 @@ const getMissingSmtpConfig = () => {
 };
 
 const sendOtpEmail = async ({ to, firstName, otp }) => {
-  const transporter = createMailTransporter();
+  const transporter = createMailTransporter({
+  host: 'smtp.gmail.com',
+  port: 465, // Try switching to 465 (see step 2)
+  secure: true, // true for 465, false for other ports
+});
 
   if (!transporter) {
     console.log(
