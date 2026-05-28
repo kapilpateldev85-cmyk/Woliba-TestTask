@@ -1,7 +1,6 @@
 require("dotenv").config();
 const http = require("http");
 const fs = require("fs");
-const nodemailer = require("nodemailer");
 const path = require("path");
 
 const PORT = process.env.PORT || 5000;
@@ -84,84 +83,15 @@ const createAuthToken = (userId) => {
   return Buffer.from(`user-${userId}-${Date.now()}`).toString("base64");
 };
 
-const createOtpCode = () => {
-  if (process.env.USE_STATIC_OTP === "true") {
-    return OTP_CODE;
-  }
-
-  return String(Math.floor(100000 + Math.random() * 900000));
-};
-
-const createMailTransporter = () => {
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE } = process.env;
-
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-    return null;
-  }
-
-  return nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: Number(SMTP_PORT),
-    secure: SMTP_SECURE === "true" || Number(SMTP_PORT) === 465,
-    auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASS.replace(/\s+/g, ""),
-    },
-  });
-};
-
-const getMissingSmtpConfig = () => {
-  return ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS"].filter(
-    (key) => !process.env[key]
-  );
-};
-
-const sendOtpEmail = async ({ to, firstName, otp }) => {
-  const transporter = createMailTransporter({
-  host: 'smtp.gmail.com',
-  port: 465, // Try switching to 465 (see step 2)
-  secure: true, // true for 465, false for other ports
-});
-
-  if (!transporter) {
-    console.log(
-      `SMTP is not configured. OTP for ${to}: ${otp}`
-    );
-    return { sent: false, skipped: true };
-  }
-
-  const from = process.env.SMTP_FROM || process.env.SMTP_USER;
-  const name = firstName || "there";
-
-  await transporter.sendMail({
-    from,
-    to,
-    subject: "Your Woliba verification OTP",
-    text: `Hi ${name}, your Woliba OTP is ${otp}. It is valid for this registration session.`,
-    html: `
-      <div style="font-family: Arial, Helvetica, sans-serif; color: #16465c; line-height: 1.5;">
-        <h2 style="margin: 0 0 12px;">Verify your Woliba registration</h2>
-        <p>Hi ${name},</p>
-        <p>Your OTP is:</p>
-        <p style="font-size: 24px; font-weight: 700; letter-spacing: 4px; margin: 16px 0;">${otp}</p>
-        <p>Use this code to continue your Woliba registration.</p>
-      </div>
-    `,
-  });
-
-  return { sent: true, skipped: false };
-};
-
-const saveOtpAndSendEmail = async ({ db, companyId, email, firstName, lastName }) => {
+const saveDummyOtpRegistration = ({ db, companyId, email, firstName, lastName }) => {
   const token = createToken();
-  const otp = createOtpCode();
   const registration = {
     id: db.registrations.length + 1,
     company_id: companyId || null,
     mail: email,
     fname: firstName || "",
     lname: lastName || "",
-    otp,
+    otp: OTP_CODE,
     token,
     verified: false,
     created_at: new Date().toISOString(),
@@ -169,26 +99,6 @@ const saveOtpAndSendEmail = async ({ db, companyId, email, firstName, lastName }
 
   db.registrations.push(registration);
   writeDb(db);
-
-  try {
-    await sendOtpEmail({
-      to: email,
-      firstName,
-      otp,
-    });
-  } catch (error) {
-    console.error("OTP email send failed:", {
-      code: error.code,
-      command: error.command,
-      responseCode: error.responseCode,
-      message: error.message,
-    });
-
-    db.registrations = db.registrations.filter((item) => item.token !== token);
-    writeDb(db);
-
-    throw error;
-  }
 
   return { token };
 };
@@ -271,29 +181,21 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
-      try {
-        const { token } = await saveOtpAndSendEmail({
-          db,
-          companyId: body.company_id,
-          email: body.mail,
-          firstName: body.fname,
-          lastName: body.lname,
-        });
+      const { token } = saveDummyOtpRegistration({
+        db,
+        companyId: body.company_id,
+        email: body.mail,
+        firstName: body.fname,
+        lastName: body.lname,
+      });
 
-        return sendJson(res, 200, {
-          status: "success",
-          data: {
-            message: "OTP sent successfully! Please check your email for OTP.",
-            token,
-          },
-        });
-      } catch (error) {
-        console.log(error)
-        return sendJson(res, 500, {
-          status: "error",
-          message: "Unable to send OTP email. Please try again1.",
-        });
-      }
+      return sendJson(res, 200, {
+        status: "success",
+        data: {
+          message: "Please enter any dummy OTP to continue.",
+          token,
+        },
+      });
     }
 
     if (apiPath === "/send-otp" || apiPath === "/send-otp-mail") {
@@ -306,29 +208,21 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
-      try {
-        const { token } = await saveOtpAndSendEmail({
-          db,
-          companyId: body.company_id,
-          email,
-          firstName: body.firstName || body.fname,
-          lastName: body.lastName || body.lname,
-        });
+      const { token } = saveDummyOtpRegistration({
+        db,
+        companyId: body.company_id,
+        email,
+        firstName: body.firstName || body.fname,
+        lastName: body.lastName || body.lname,
+      });
 
-        return sendJson(res, 200, {
-          status: "success",
-          data: {
-            message: "OTP sent successfully! Please check your email for OTP.",
-            token,
-          },
-        });
-      } catch (error) {
-        console.log(error)
-        return sendJson(res, 500, {
-          status: "error",
-          message: "Unable to send OTP email. Please try again2.",
-        });
-      }
+      return sendJson(res, 200, {
+        status: "success",
+        data: {
+          message: "Please enter any dummy OTP to continue.",
+          token,
+        },
+      });
     }
 
     if (apiPath === "/verify-otp-for-user-registration") {
@@ -343,14 +237,8 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
-      if (registration.otp !== body.otp) {
-        return sendJson(res, 400, {
-          status: "error",
-          message: "Invalid OTP.",
-        });
-      }
-
       registration.verified = true;
+      registration.entered_otp = body.otp || "";
       registration.verified_at = new Date().toISOString();
       writeDb(db);
 
@@ -474,27 +362,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`JSON server backend running at http://localhost:${PORT}`);
   console.log("Use company Woliba and password Woliba@123!");
-  console.log(`Mock OTP code is ${OTP_CODE}`);
-
-  const missingSmtpConfig = getMissingSmtpConfig();
-
-  if (missingSmtpConfig.length) {
-    console.log(
-      `SMTP email is disabled. Missing: ${missingSmtpConfig.join(", ")}`
-    );
-    console.log("Create frontend/backend/.env from frontend/backend/.env.example to send OTP emails.");
-  } else {
-    console.log(`SMTP email is enabled for ${process.env.SMTP_USER}`);
-
-    const normalizedPasswordLength = process.env.SMTP_PASS.replace(/\s+/g, "").length;
-
-    if (
-      process.env.SMTP_HOST.includes("gmail") &&
-      normalizedPasswordLength !== 16
-    ) {
-      console.log(
-        `Warning: Gmail app passwords are normally 16 characters. Current SMTP_PASS length is ${normalizedPasswordLength}.`
-      );
-    }
-  }
+  console.log("OTP email sending is disabled. Any 6-digit dummy OTP is accepted.");
 });

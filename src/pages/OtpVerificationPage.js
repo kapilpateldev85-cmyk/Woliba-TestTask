@@ -133,7 +133,7 @@ function OtpVerificationPage() {
           Input verification code
         </h1>
         <p className="mb-5 text-center text-xs text-gray-500">
-          We&apos;ve sent a 6-digit OTP to your work email. Please enter it below to continue.
+          Please enter any 6-digit dummy OTP to continue.
         </p>
 
         <div className="flex justify-center gap-2">
@@ -190,10 +190,10 @@ function OtpVerificationPage() {
             className="text-xs font-medium text-woliba-navy disabled:cursor-not-allowed disabled:text-woliba-navy"
           >
             {userStep.loading
-              ? "Sending OTP..."
+              ? "Preparing OTP..."
               : timer > 0
               ? `Resend OTP in ${formatTimer(timer)}`
-              : "Resend OTP"}
+              : "Reset OTP"}
           </button>
         </div>
 

@@ -176,7 +176,7 @@ const registrationSlice = createSlice({
         state.userStep.loading = false;
         state.userStep.success = true;
         state.userStep.message =
-          action.payload?.data?.message || "OTP sent successfully.";
+          action.payload?.data?.message || "Please enter any dummy OTP to continue.";
         state.otpToken = action.payload?.data?.token || "";
         state.userDetails = action.meta.arg;
       })
