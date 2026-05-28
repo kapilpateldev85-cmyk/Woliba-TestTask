@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# Woliba Registration Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Overview
+
+This project is a React-based registration flow for Woliba. It guides a user through company verification, user details, OTP verification, login credential setup, wellness interest selection, wellbeing pillar selection, registration completion, and a welcome screen.
+
+The app includes a lightweight local Node.js backend in `backend/server.js`. The backend reads and writes mock data from `backend/db.json`, verifies company credentials, sends or logs OTP codes, and completes user registration.
+
+Default registration route:
+
+```bash
+http://localhost:3000/registration
+```
+
+## Setup Instructions
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the local backend API:
+
+```bash
+npm run server
+```
+
+The backend runs on:
+
+```bash
+http://localhost:5000
+```
+
+3. Start the React app in another terminal:
+
+```bash
+npm start
+```
+
+The frontend runs on:
+
+```bash
+http://localhost:3000
+```
+
+4. Use the seeded company credentials:
+
+```text
+Company: Woliba
+Password: Woliba@123!
+```
+
+5. Optional environment configuration:
+
+Frontend API settings can be configured in `frontend/.env`:
+
+```env
+REACT_APP_API_BASE_URL=http://localhost:5000/v1
+REACT_APP_JSON_SERVER_BASE_URL=http://localhost:5010
+```
+
+Backend OTP email settings can be configured in `frontend/backend/.env`:
+
+```env
+PORT=5000
+USE_STATIC_OTP=true
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+SMTP_FROM=
+```
+
+If SMTP values are not provided, the backend logs the OTP in the terminal. When `USE_STATIC_OTP=true`, the mock OTP is:
+
+```text
+123456
+```
+
+## Libraries/Tools Used
+
+- React 19
+- React DOM
+- React Router DOM
+- Redux Toolkit
+- React Redux
+- Axios
+- Fetch API
+- Node.js HTTP server
+- Nodemailer
+- Tailwind CSS
+- PostCSS
+- Autoprefixer
+- Create React App / React Scripts
+- React Testing Library
+- Web Vitals
+
+## Folder Structure
+
+```text
+frontend/
+├── backend/
+│   ├── db.json              # Mock database for companies, registrations, users, interests, and pillars
+│   ├── server.js            # Local Node.js API server
+│   └── .env                 # Backend environment variables
+├── build/                   # Production build output
+├── docs/
+│   └── screenshots/         # App screenshots
+├── public/
+│   ├── index.html           # HTML template
+│   ├── manifest.json        # Web app manifest
+│   └── robots.txt
+├── src/
+│   ├── api/
+│   │   └── apiClient.js     # API request helpers and base URL fallback logic
+│   ├── assests/             # Images and media used by the app
+│   ├── assets/              # Additional static assets
+│   ├── components/          # Shared UI components
+│   ├── pages/               # Registration flow screens
+│   ├── redux/               # Redux store and registration slice
+│   ├── routes/              # App route definitions
+│   ├── services/            # API service functions
+│   ├── styles/              # Additional style files
+│   ├── utils/               # Validation helpers
+│   ├── App.js               # Root app component
+│   ├── index.js             # React entry point
+│   └── index.css            # Global styles
+├── package.json             # Dependencies and npm scripts
+├── package-lock.json        # Locked dependency versions
+├── postcss.config.js        # PostCSS configuration
+├── tailwind.config.js       # Tailwind CSS configuration
+└── README.md
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+```bash
+npm start
+```
 
-### `npm start`
+Runs the React development server.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm run server
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the local backend API.
 
-### `npm test`
+```bash
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Creates a production build in the `build/` folder.
 
-### `npm run build`
+```bash
+npm test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Runs the test suite in watch mode.

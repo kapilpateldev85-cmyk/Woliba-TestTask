@@ -1,0 +1,567 @@
+{
+  "companies": [
+    {
+      "id": 12,
+      "company_name": "Woliba",
+      "password": "Woliba@123!",
+      "spouse_or_dependent": 1,
+      "show_spouse": 1,
+      "show_dependent": 1
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "company_id": 12,
+      "mail": "test@example.com",
+      "fname": "Test",
+      "lname": "User",
+      "otp": "123456",
+      "token": "MTc3OTg4MjUxNDM4OS0wLjY5NDgwMTk4NzQ3MTQ4MDg=",
+      "verified": true,
+      "created_at": "2026-05-27T11:48:34.390Z",
+      "verified_at": "2026-05-27T11:48:46.618Z"
+    },
+    {
+      "id": 2,
+      "company_id": 12,
+      "mail": "Khushipatel15073@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4MzM0ODgxMC0wLjU4NjE3OTg1Mzg3OTU4NjI=",
+      "verified": true,
+      "created_at": "2026-05-27T12:02:28.810Z",
+      "verified_at": "2026-05-27T12:05:17.983Z"
+    },
+    {
+      "id": 3,
+      "company_id": 12,
+      "mail": "khushi@gmail.con",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4NDQ1ODE2MC0wLjYzMzUyMzAxOTI5OTYwNjY=",
+      "verified": true,
+      "created_at": "2026-05-27T12:20:58.160Z",
+      "verified_at": "2026-05-27T12:21:14.760Z"
+    },
+    {
+      "id": 4,
+      "company_id": 12,
+      "mail": "khushi@gmail.c",
+      "fname": "fjfferu",
+      "lname": "nbferf",
+      "otp": "123456",
+      "token": "MTc3OTg4NDk4ODMzMy0wLjIyNjA2MDk4NzgyMDg0NjE2",
+      "verified": false,
+      "created_at": "2026-05-27T12:29:48.333Z"
+    },
+    {
+      "id": 5,
+      "company_id": 12,
+      "mail": "khushi@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4NjM2NTM0MS0wLjA3MzA1NTcxMjI5MDE2MDcy",
+      "verified": true,
+      "created_at": "2026-05-27T12:52:45.341Z",
+      "verified_at": "2026-05-27T12:52:53.400Z"
+    },
+    {
+      "id": 6,
+      "company_id": 12,
+      "mail": "k@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4NzQwMjU3OC0wLjc0ODEyMzk0MzgzNTI4Mjc=",
+      "verified": true,
+      "created_at": "2026-05-27T13:10:02.578Z",
+      "verified_at": "2026-05-27T13:10:08.688Z"
+    },
+    {
+      "id": 7,
+      "company_id": 12,
+      "mail": "kp@gmail.com",
+      "fname": "khushi",
+      "lname": "Patel",
+      "otp": "123456",
+      "token": "MTc3OTg4ODIwNzAxMS0wLjEzODIxMzU4MTU2NDU5ODQ=",
+      "verified": true,
+      "created_at": "2026-05-27T13:23:27.011Z",
+      "verified_at": "2026-05-27T13:23:32.874Z"
+    },
+    {
+      "id": 8,
+      "company_id": 12,
+      "mail": "khushi@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4ODYyODAzNS0wLjg5MDc4NTAzNTE4MDI3NjI=",
+      "verified": true,
+      "created_at": "2026-05-27T13:30:28.035Z",
+      "verified_at": "2026-05-27T13:30:33.326Z"
+    },
+    {
+      "id": 9,
+      "company_id": 12,
+      "mail": "k@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg4OTMyODMzOC0wLjY3MzcxNTQwMjg3MzIzMjY=",
+      "verified": true,
+      "created_at": "2026-05-27T13:42:08.338Z",
+      "verified_at": "2026-05-27T13:42:13.176Z",
+      "completed": true,
+      "completed_at": "2026-05-27T13:42:35.117Z"
+    },
+    {
+      "id": 10,
+      "company_id": 12,
+      "mail": "SHASHANK@GMAIL.COM",
+      "fname": "SHASHANK",
+      "lname": "SHRIVASTAVA",
+      "otp": "123456",
+      "token": "MTc3OTg4OTQ1MDQ3My0wLjI0NjEzODAzMjI2NDA5MDky",
+      "verified": true,
+      "created_at": "2026-05-27T13:44:10.473Z",
+      "verified_at": "2026-05-27T13:44:23.643Z",
+      "completed": true,
+      "completed_at": "2026-05-27T13:45:10.953Z"
+    },
+    {
+      "id": 11,
+      "company_id": 12,
+      "mail": "test-otp@example.com",
+      "fname": "Test",
+      "lname": "Otp",
+      "otp": "123456",
+      "token": "MTc3OTg4OTg2MTIyNy0wLjk0MDQwODUwMDU3NDQ3MTM=",
+      "verified": false,
+      "created_at": "2026-05-27T13:51:01.227Z"
+    },
+    {
+      "id": 12,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg5MDAyNjE0OS0wLjMwMDg0MDEyMzc3ODMwMTg=",
+      "verified": false,
+      "created_at": "2026-05-27T13:53:46.149Z"
+    },
+    {
+      "id": 13,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg5MDY3NTg0NC0wLjY0NzYzNDg0NTEyOTQ3MzM=",
+      "verified": false,
+      "created_at": "2026-05-27T14:04:35.845Z"
+    },
+    {
+      "id": 14,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "khuhshi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg5MDgwNjQxNy0wLjc0NzA5NjU3OTMwNjI1MTQ=",
+      "verified": false,
+      "created_at": "2026-05-27T14:06:46.418Z"
+    },
+    {
+      "id": 15,
+      "company_id": 12,
+      "mail": "kp615408@gmail.com",
+      "fname": "khuhsi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg5MDg0OTM3MS0wLjQyNjY0NjE2OTEzNDA2MzA2",
+      "verified": false,
+      "created_at": "2026-05-27T14:07:29.371Z"
+    },
+    {
+      "id": 16,
+      "company_id": 12,
+      "mail": "kp615408@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "otp": "123456",
+      "token": "MTc3OTg5MTAyNTA1Ni0wLjI3MTk4NDA1MTg0MzQ0ODY1",
+      "verified": false,
+      "created_at": "2026-05-27T14:10:25.056Z"
+    },
+    {
+      "id": 17,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "khu",
+      "lname": "patek",
+      "otp": "123456",
+      "token": "MTc3OTg5MTA4NzA3Ni0wLjc3MjM1NDgzMjQ0NDg2MzI=",
+      "verified": false,
+      "created_at": "2026-05-27T14:11:27.076Z"
+    },
+    {
+      "id": 18,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "khushi",
+      "lname": "khushi",
+      "otp": "123456",
+      "token": "MTc3OTg5MTU0MTc2NC0wLjMyMzY5NDgwNDEwOTE5MDc=",
+      "verified": false,
+      "created_at": "2026-05-27T14:19:01.771Z"
+    },
+    {
+      "id": 19,
+      "company_id": 12,
+      "mail": "prabal19999@example.com",
+      "fname": "John",
+      "lname": "Doe",
+      "otp": "233105",
+      "token": "MTc3OTg5MzIyMjE3Ny0wLjQwNDE3MTg0MzA3NTE1Njg2",
+      "verified": false,
+      "created_at": "2026-05-27T14:47:02.177Z"
+    },
+    {
+      "id": 20,
+      "company_id": 12,
+      "mail": "prabal19999@gmail.com",
+      "fname": "John",
+      "lname": "Doe",
+      "otp": "880152",
+      "token": "MTc3OTg5MzI1NzU4Ny0wLjY0NzI4MTU2NTcwNTcwNjk=",
+      "verified": false,
+      "created_at": "2026-05-27T14:47:37.587Z"
+    },
+    {
+      "id": 21,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "test",
+      "lname": "test",
+      "otp": "162732",
+      "token": "MTc3OTk0Nzc2NjUxNy0wLjc1NTIyMTQ2MjA5MzMxNA==",
+      "verified": true,
+      "created_at": "2026-05-28T05:56:06.517Z",
+      "verified_at": "2026-05-28T05:56:26.425Z",
+      "completed": true,
+      "completed_at": "2026-05-28T05:56:48.391Z"
+    }
+  ],
+  "wellbeingPillars": [
+    {
+      "id": 1,
+      "pillar_title": "Physical Wellbeing",
+      "description": "Energy, movement, sleep, and routine care",
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "pillar_title": "Mental Wellbeing",
+      "description": "Clarity, focus, and mindfulness",
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "pillar_title": "Emotional Wellbeing",
+      "description": "Resilience, self-awareness, and stress regulation",
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "pillar_title": "Social Wellbeing",
+      "description": "Relationships and meaningful connection",
+      "is_active": 1
+    },
+    {
+      "id": 5,
+      "pillar_title": "Intellectual Wellbeing",
+      "description": "Growth, creativity, and learning",
+      "is_active": 1
+    },
+    {
+      "id": 6,
+      "pillar_title": "Occupational Wellbeing",
+      "description": "Purpose, performance, and work-life balance",
+      "is_active": 1
+    },
+    {
+      "id": 7,
+      "pillar_title": "Spiritual Wellbeing",
+      "description": "Values, meaning, and inner alignment",
+      "is_active": 1
+    },
+    {
+      "id": 8,
+      "pillar_title": "Environmental Wellbeing",
+      "description": "Healthy, safe, and productive surroundings",
+      "is_active": 1
+    },
+    {
+      "id": 9,
+      "pillar_title": "Purpose & Contribution",
+      "description": "Giving back and living with meaning",
+      "is_active": 1
+    },
+    {
+      "id": 10,
+      "pillar_title": "Longevity",
+      "description": "A sustainable, healthy lifestyle for the long term",
+      "is_active": 1
+    },
+    {
+      "id": 11,
+      "pillar_title": "Nutritional Wellbeing",
+      "description": "Fueling your body and brain with intention",
+      "is_active": 1
+    },
+    {
+      "id": 12,
+      "pillar_title": "Financial Wellbeing",
+      "description": "Security, budgeting, and long-term stability",
+      "is_active": 1
+    }
+  ],
+  "wellnessInterests": [
+    {
+      "id": 1,
+      "name": "Acrobatics",
+      "interest_type": "Individual Sports",
+      "background_color": "#92A4DA",
+      "interest_icon": "interest_icons/acrobatics.png"
+    },
+    {
+      "id": 2,
+      "name": "Ballet",
+      "interest_type": "Individual Sports",
+      "background_color": "#DA92C8",
+      "interest_icon": "interest_icons/ballet.png"
+    },
+    {
+      "id": 3,
+      "name": "Calisthenics",
+      "interest_type": "Individual Sports",
+      "background_color": "#DF6874",
+      "interest_icon": "interest_icons/calisthenics.png"
+    },
+    {
+      "id": 4,
+      "name": "Dance",
+      "interest_type": "Individual Sports",
+      "background_color": "#92C8DA",
+      "interest_icon": "interest_icons/dance.png"
+    },
+    {
+      "id": 5,
+      "name": "Gymnastics",
+      "interest_type": "Individual Sports",
+      "background_color": "#DABF92",
+      "interest_icon": "interest_icons/gymnastics.png"
+    },
+    {
+      "id": 6,
+      "name": "Hiking",
+      "interest_type": "Individual Sports",
+      "background_color": "#7EBB8F",
+      "interest_icon": "interest_icons/hiking.png"
+    },
+    {
+      "id": 7,
+      "name": "Obstacle Racing",
+      "interest_type": "Individual Sports",
+      "background_color": "#DF6874",
+      "interest_icon": "interest_icons/obstacle_racing.png"
+    },
+    {
+      "id": 8,
+      "name": "Pilates",
+      "interest_type": "Individual Sports",
+      "background_color": "#92A4DA",
+      "interest_icon": "interest_icons/pilates.png"
+    },
+    {
+      "id": 9,
+      "name": "Running",
+      "interest_type": "Individual Sports",
+      "background_color": "#DF6874",
+      "interest_icon": "interest_icons/running.png"
+    },
+    {
+      "id": 10,
+      "name": "Walking",
+      "interest_type": "Individual Sports",
+      "background_color": "#7EBB8F",
+      "interest_icon": "interest_icons/walking.png"
+    },
+    {
+      "id": 11,
+      "name": "Yoga",
+      "interest_type": "Individual Sports",
+      "background_color": "#92C8DA",
+      "interest_icon": "interest_icons/yoga.png"
+    },
+    {
+      "id": 12,
+      "name": "Basketball",
+      "interest_type": "Ball Sports",
+      "background_color": "#DF6874",
+      "interest_icon": "interest_icons/basketball.png"
+    },
+    {
+      "id": 13,
+      "name": "Soccer",
+      "interest_type": "Ball Sports",
+      "background_color": "#7EBB8F",
+      "interest_icon": "interest_icons/soccer.png"
+    },
+    {
+      "id": 14,
+      "name": "Cycling",
+      "interest_type": "Wheel Sports",
+      "background_color": "#92A4DA",
+      "interest_icon": "interest_icons/cycling.png"
+    },
+    {
+      "id": 15,
+      "name": "Boxing",
+      "interest_type": "Combat Sports",
+      "background_color": "#DF6874",
+      "interest_icon": "interest_icons/boxing.png"
+    },
+    {
+      "id": 16,
+      "name": "Strength Training",
+      "interest_type": "Resistance Training",
+      "background_color": "#DABF92",
+      "interest_icon": "interest_icons/strength_training.png"
+    },
+    {
+      "id": 17,
+      "name": "Skiing",
+      "interest_type": "Winter Sports",
+      "background_color": "#92C8DA",
+      "interest_icon": "interest_icons/skiing.png"
+    },
+    {
+      "id": 18,
+      "name": "Swimming",
+      "interest_type": "Water Sports",
+      "background_color": "#92A4DA",
+      "interest_icon": "interest_icons/swimming.png"
+    },
+    {
+      "id": 19,
+      "name": "Meditation",
+      "interest_type": "Other Sports",
+      "background_color": "#DA92C8",
+      "interest_icon": "interest_icons/meditation.png"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "company_id": 12,
+      "mail": "k@gmail.com",
+      "fname": "khushi",
+      "lname": "patel",
+      "time_zone": "Asia/Calcutta",
+      "areas_of_interest": [
+        9
+      ],
+      "wellbeing_pillars": [
+        4,
+        6,
+        8
+      ],
+      "accepted_privacy_policy": true,
+      "birthday": "2026-05-23",
+      "phone_number": "1234567890",
+      "user_type": 0,
+      "gender": "",
+      "profile_image": "",
+      "language_id": 1,
+      "smoke": "no",
+      "exercise_day_per_week": "3-4 days",
+      "average_sleep_per_night": "7-8 hours",
+      "average_water_intake": "8+ glasses",
+      "pain_experience": "rarely",
+      "prescription_intake": "none",
+      "physical_exam_frequency": "annually",
+      "created_at": "2026-05-27T13:42:35.117Z"
+    },
+    {
+      "id": 2,
+      "company_id": 12,
+      "mail": "SHASHANK@GMAIL.COM",
+      "fname": "SHASHANK",
+      "lname": "SHRIVASTAVA",
+      "time_zone": "Asia/Calcutta",
+      "areas_of_interest": [
+        8,
+        9,
+        10
+      ],
+      "wellbeing_pillars": [
+        6,
+        4,
+        3
+      ],
+      "accepted_privacy_policy": true,
+      "birthday": "2026-05-01",
+      "phone_number": "9993996284",
+      "user_type": 0,
+      "gender": "",
+      "profile_image": "",
+      "language_id": 1,
+      "smoke": "no",
+      "exercise_day_per_week": "3-4 days",
+      "average_sleep_per_night": "7-8 hours",
+      "average_water_intake": "8+ glasses",
+      "pain_experience": "rarely",
+      "prescription_intake": "none",
+      "physical_exam_frequency": "annually",
+      "created_at": "2026-05-27T13:45:10.953Z"
+    },
+    {
+      "id": 3,
+      "company_id": 12,
+      "mail": "khushipatel15073@gmail.com",
+      "fname": "test",
+      "lname": "test",
+      "time_zone": "Asia/Calcutta",
+      "areas_of_interest": [
+        10
+      ],
+      "wellbeing_pillars": [
+        6,
+        5,
+        3
+      ],
+      "accepted_privacy_policy": true,
+      "birthday": "2026-05-02",
+      "phone_number": "1234567890",
+      "user_type": 0,
+      "gender": "",
+      "profile_image": "",
+      "language_id": 1,
+      "smoke": "no",
+      "exercise_day_per_week": "3-4 days",
+      "average_sleep_per_night": "7-8 hours",
+      "average_water_intake": "8+ glasses",
+      "pain_experience": "rarely",
+      "prescription_intake": "none",
+      "physical_exam_frequency": "annually",
+      "created_at": "2026-05-28T05:56:48.391Z"
+    }
+  ]
+}
